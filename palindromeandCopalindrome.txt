@@ -1,0 +1,74 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+public class Main
+{
+	public static void main(String[] args){
+	    Scanner sc=new Scanner(System.in);
+	    int min=sc.nextInt();
+	    int max=sc.nextInt();
+	    int n;
+	    int r;
+	    int rev;
+	    int pal;
+	    int fpal;
+	    int count=0;
+	   for(int i=min;i<=max;i++)
+	   {   n=i;
+	       pal = n;
+	       rev = 0;
+	       while(n!=0)
+	       {
+	        r = n%10;
+	        rev = rev*10 + r;
+	        n = n/10;
+	       }
+	       if(pal == rev)
+	       {
+	         fpal=pal;
+	         String s = "";
+	         int x = 0;
+		while(fpal!=0)
+		{
+		 x = fpal%2;
+		 String str = String.valueOf(x);
+		 s = s + str;
+		 fpal = fpal/2;
+		}
+		String revS ="";
+		for(int k=s.length()-1;k>=0;k--)
+		{
+		    revS = revS + s.charAt(k);
+		}
+		int z=Integer.parseInt(revS);
+		int z1=z;
+		int r1;
+		int rev1 = 0;
+		 while(z!=0)
+	       {
+	        r1 = z%10;
+	        rev1 = rev1*10 + r1;
+	        z = z/10;
+	       }
+	       if(z1 == rev1)
+	       {
+	           count++;
+	       }
+		        
+	       }
+	   }
+	   System.out.println(count);
+	    
+	}
+}
